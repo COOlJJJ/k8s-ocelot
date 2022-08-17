@@ -1,0 +1,28 @@
+{
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Namespace": "xdp-poc",
+      "Type": "kube"
+    }
+  },
+  "Routes": [
+    // API01: apple-api-svc
+    {
+      "DownstreamPathTemplate": "/api/{url}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/apple/{url}",
+      "ServiceName": "apple-api-svc",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
+    },
+    // API02: banana-api-svc
+    {
+      "DownstreamPathTemplate": "/api/{url}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/banana/{url}",
+      "ServiceName": "banana-api-svc",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
+    }
+  ]
+}
+
+、
